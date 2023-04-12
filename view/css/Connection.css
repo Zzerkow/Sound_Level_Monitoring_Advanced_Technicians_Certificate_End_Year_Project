@@ -1,0 +1,75 @@
+/*---------- Style Connect page ----------*/
+
+.Main_Card{
+    height: 475px;
+    width: 475px;
+    background-color: #363636;
+    border-radius: 50px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.Container_username
+{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.Container_password{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.LB_Connect_Page{
+    font-family: Poppins-Regular;
+    font-size: 18px;
+    color: white;
+}
+
+.TB_Connect_Page{
+    height: 40px;
+    width: 350px;
+    border-radius: 15px;
+    border: none;
+    margin: 17px 0 20px 0;
+    font-family: Poppins-Regular;
+    font-size: 15px;
+}
+
+.TB_Connect_Page:focus{
+    outline:none;
+}
+
+.Connect_Title{
+    font-family: Poppins-SemiBold;
+    font-size: 24px;
+    margin-bottom: 40px;
+    color: white;
+}
+
+.LB_warning{
+    font-family: Poppins-Regular;
+    font-size: 14px;
+    margin-bottom: 10px;
+    visibility: hidden;
+}
+
+.BTN_connect{
+    position : relative;
+    display: flex;
+    background-color: #B2FFC8;
+    font-family: Poppins-SemiBold;
+    font-size: 16px;
+    color: black;
+    border: none;
+    border-radius: 25px;
+    height: 60px;
+    width: 150px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}

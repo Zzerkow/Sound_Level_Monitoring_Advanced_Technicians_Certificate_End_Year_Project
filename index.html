@@ -1,0 +1,128 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title>S.N.S | Connexion</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="view/css/Connection.css">
+    <link rel="stylesheet" href="view/css/main.css">
+    <link rel="stylesheet" href="view/css/Settings.css">
+    <link href="view/img/SNS_Icon.png" rel="icon" type="image/jpg"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body id="copy">
+
+<div class="Principal_container">
+
+<div class="container_Settings" id="container_Settings">
+
+    <div class="container_global_test">
+        <div class="State_title_container">
+            <label class="State_Title">Etats des Services</label>
+        </div>
+
+        <div class="Test_container">
+            <label class="Title_test">Raspberry</label>
+            <img class="Img_test" id="Img_state_RASP" src="view/img/Wrong_Settings.svg">
+        </div>
+
+        <div class="Test_container">
+            <label class="Title_test">BDD</label>
+            <img class="Img_test" id="Img_state_BDD" src="view/img/Wrong_Settings.svg">
+        </div>
+
+        <div class="Test_container">
+            <label class="Title_test">API</label>
+            <img class="Img_test" id="Img_State_API" src="view/img/Wrong_Settings.svg">
+        </div>
+
+        <div class="Test_container">
+            <label class="Explanation_test">Testez la connexion avec les différents éléments du système (réseau, service web, base de données).</label>
+        </div>
+    </div>
+
+</div>
+
+<div class="wrapper">
+
+    <div class="container_top">
+
+        <div class="container_user" id="container_user">
+            <div class="container_profile">
+                <div id="Id_profile"></div>
+                <label class="Profile_name" id="profile_name"></label>
+            </div>
+        </div>
+
+        <div class="container_Title">
+            <img src="view/img/Title_SNS.svg" class="Img_Title"/><div class="container_Blurry"></div>
+            <div class="container_Set_Main">
+                <div class="container_Set_Message">
+                </div>
+            </div>
+        </div>
+        <div class="container_settings">
+            <div class="container_LB_img" >
+                <button class="Img_Settings" id="BTN_settings" onclick="Display_Settings()"></button>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="Main_Card" id="Main_Card">
+
+        <label class="Connect_Title">Connexion</label>
+
+        <div class="Container_username">
+            <label class="LB_Connect_Page">Identifiant</label>
+            <input type="text" class="TB_Connect_Page" id="Username"/>
+        </div>
+
+        <div class="Container_password">
+            <label class="LB_Connect_Page">Mot de passe</label>
+            <input type="password" class="TB_Connect_Page" id="Password"/>
+        </div>
+
+        <label class="LB_warning" id="LB_warning">Connexion établie, redirection vers page User.</label>
+        <button class="BTN_connect" id="Connect_click" onclick="Connection()">Se connecter</button>
+
+    </div>  <!--- Carte de Connexion à la base de données -->
+
+
+    <div class="container_footer">
+
+        <div class="container_footer_">
+            <label class="LB_copyright">EKA © 2022. Tous droits réservés.</label>
+        </div>
+        <div class="container_footer_"></div>
+        <div class="container_footer_">
+            <label class="version">V1.2</label>
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+<div id="DL_APK" class="Container_APK">
+
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_87j5x5ty.json"  background="transparent"  speed="1"  style="width: 100px; height: 100px; margin-bottom: 5%" autoplay></lottie-player>
+
+    <label class="LB_APK_Warning">L'appareil que vous utilisez n'a pas le bon format d'affichage</label>
+    <label class="LB_APK_Warning">Veuillez téléchargez l'application pour y accéder</label>
+    <img src="view/img/APK_apercu.svg" class="IMG_APK">
+    <a href="http://valentinluginbuhl.fr/sns/SNS.apk" class="Download_APK">SNS.apk</a>
+
+</div>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="view/codebehind/connect.js"></script>
+<script type="text/javascript" src="view/codebehind/Settings_connect.js"></script>
+<script type="text/javascript" src="view/codebehind/variable.js"></script>
+</html>

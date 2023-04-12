@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>S.N.S | Admin Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/Settings.css">
+    <link rel="stylesheet" href="../css/slider.css">
+    <link href="../img/SNS_Icon.png" rel="icon" type="image/jpg"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body id="copy">
+
+<div class="Principal_container">
+
+<div class="container_Settings" id="container_Settings">
+
+    <div class="container_global_test">
+    <div class="State_title_container">
+        <label class="State_Title">Etats des Services</label>
+    </div>
+
+        <div class="Test_container">
+            <label class="Title_test">BDD</label>
+            <img class="Img_test" id="Img_state_BDD" src="../img/Wrong_Settings.svg">
+        </div>
+
+        <div class="Test_container">
+            <label class="Title_test">API</label>
+            <img class="Img_test" id="Img_State_API" src="../img/Wrong_Settings.svg">
+        </div>
+
+        <div class="Test_container">
+            <label class="Title_test">Raspberry</label>
+            <img class="Img_test" id="Img_state_RASP" src="../img/Wrong_Settings.svg">
+        </div>
+
+    <div class="Test_container_explanation">
+        <label class="Explanation_test">Testez la connexion avec les différents éléments du système.</label>
+    </div>
+
+    <div class="Profil_Title_container">
+        <label class="State_Title">Profil</label>
+    </div>
+
+    <div class="Test_container">
+        <img class="Img_Disconnect" src="../img/Disconnect.svg" onclick="Disconnect_User()">
+        <label class="BTN_Disconnect" onclick="Disconnect_User()">Disconnect</label>
+    </div>
+
+    </div>
+
+</div>
+
+<div class="wrapper">
+
+    <div class="container_top">
+
+        <div class="container_user" id="container_user">
+            <div class="container_profile">
+                <div id="Id_profile"></div>
+                <label class="Profile_name" id="profile_name"></label>
+            </div>
+        </div>
+
+        <div class="container_Title">
+            <img src="../img/Title_SNS.svg" class="Img_Title"/><div class="container_Blurry"></div>
+            <div class="container_Set_Main">
+                <div class="container_Set_Message">
+                </div>
+            </div>
+        </div>
+
+        <div class="container_settings">
+           <div class="container_LB_img" >
+               <button class="Img_Settings" id="BTN_settings" onclick="Display_Settings()"></button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container_Main" id="container_Main">
+        <!-- Container contenant tous les éléments pour arranger les cartes, ainsi que les cartes -->
+
+        <div class="container_Details"> <!-- Container contenant la carte Details -->
+
+            <label class="choosed_Card_Title" id="choosed_Card_Title">Sound Level</label>
+            <div id="test">
+
+                <div class="Details_Card" id="Details_Card">
+
+                    <div id="id_sound_settings" class="display_sound_settings"> <!--Début Carte sound Settings -->
+
+                        <div class="container_modif_paliers_message">
+
+                            <div class="container_bar" id="container_bar"> <!--Début Code Modification des paliers -->
+
+                                <div id="slider">
+
+                                    <div class="borne no-select" id="min-borne">0</div>
+
+                                    <div class="track" id="green"></div>
+
+
+                                    <div class="round range" id="min-round">
+                                        <div class="range-output">
+                                            <output id="min-output" class="output no-select" name="output" type="range">
+                                                0
+                                            </output>
+                                        </div>
+                                    </div>
+
+                                    <div class="track" id="orange"></div>
+
+                                    <div class="round range range-output" id="max-round">
+                                        <div class="range-output">
+                                            <output id="max-output" class="output no-select" name="output" type="range">
+                                                120
+                                            </output>
+                                        </div>
+                                    </div>
+
+                                    <div class="track" id="red"></div>
+
+                                    <div class="borne no-select" id="max-borne">120</div>
+
+                                </div>
+
+                            </div><!--Fin Code Modification des paliers -->
+
+                            <!--Début Code Modification des Messages -->
+
+                            <div class="container_Message" id="container_Message">
+
+                                <div class="Group_Message">
+                                    <div class="MSG_Point_vert"></div>
+                                    <input  type="text" class="MSG_TB_vert" id="MSG_vert" value="Bien !" onkeyup="appear_validate_btn()">
+                                </div>
+                                <div class="Group_Message">
+                                    <div class="MSG_Point_orange"></div>
+                                    <input  type="text" class="MSG_TB_orange" id="MSG_orange" value="Attention !" onkeyup="appear_validate_btn()">
+                                </div>
+                                <div class="Group_Message">
+                                    <div class="MSG_Point_rouge"></div>
+                                    <input  type="text" class="MSG_TB_rouge" id="MSG_rouge" value="Trop fort !" onkeyup="appear_validate_btn()">
+                                </div>
+
+                            </div><!--Fin Code Modification des Messages -->
+
+                        </div>
+
+                        <div class="container_BTN_SND_settings">
+
+                            <div class="container_btn_validate" id="container_btn_validate">
+                                <button class="BTN_validate_style" id="BTN_validate" onclick="BTN_Validate_Click()">Validate</button>
+                                <label class="LB_set_message" id="BTN_set_message" onclick="show_Editing_Message()">Set Message</label>
+
+                            </div>
+
+                        </div>
+
+                    </div><!--Fin Carte sound Settings -->
+
+
+                    <div id="Sound_level" class="container_Sound_Level"> <!--Début Carte sound Level -->
+
+                        <div class="container_choosed_card"> <!-- faire changement de couleur de la carte détails car pas la meme couleur que les autres cartes-->
+
+                            <div class="container_choosed_card"></div>
+
+                        </div>
+
+                        <div class="container_Sound_Anim">
+
+                            <div class="box">
+                                <div class="Snd_bar_1 Color_Snd_Bar"></div>
+                                <div class="Snd_bar_2 Color_Snd_Bar"></div>
+                                <div class="Snd_bar_3 Color_Snd_Bar"></div>
+                                <div class="Snd_bar_4 Color_Snd_Bar"></div>
+                                <div class="Snd_bar_5 Color_Snd_Bar"></div>
+                                <div class="Snd_bar_6 Color_Snd_Bar"></div>
+                                <div class="Snd_bar_7 Color_Snd_Bar"></div>
+                                <div class="Snd_bar_8 Color_Snd_Bar"></div>
+                                <div class="Snd_bar_9 Color_Snd_Bar"></div>
+                                <div class="Snd_bar_10 Color_Snd_Bar"></div>
+                            </div>
+
+                        </div>
+
+                        <div class="Show_DB_Num">
+                            <label class="LB_Decibel" id="id_dB_live"></label>
+                            <label class="LB_Message" id="Message"></label>
+                        </div>
+                    </div> <!--Fin Carte sound Level -->
+
+
+                <div id="id_User_Settings" class="container_User_settings"><!--Début Carte User Settings -->
+
+                    <!-- A REFAIRE TOTALEMENT -->
+
+                    <div class="container_list" id="Page_1_Users_Settings"><!--Début page 1 users settings -->
+
+                        <div class="container_choosed_card_User">
+
+                            <div class="Search_bar" id="Search_bar">
+
+                                <div class="Btn_TB_bar">
+                                    <button class="BTN_Search" id="Btn_Search"></button>
+                                    <input type="text" id="TB_Search_Bar" class="TB_Search_Bar" onkeyup="User_by_writing()"/>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    <div class="User_List">
+
+                        <div class="scrolling-elements" id="Scroll_elements">
+                        <div id="Load_Users"></div>
+                        <!-- quand la page Users settings est chargé, ici les profils vont être chargés dynamiquement-->
+
+                        </div>
+                    </div>
+
+                    <div class="container_add_users">
+
+                        <div class="LBs_Add_Users" onclick="Go_Add_Page_User()">
+                        <label class="plus_Users">+</label>
+                        <label class="Add_Users">Users</label>
+                        </div>
+
+                    </div>
+
+
+                    <div class="Explanation_Users_Settings">
+
+                        <label class="Explanation_Users">Cette page a pour but de modifier les utilisateurs, d'en ajouter et de les supprimer.
+                            Ces Actions sont effectuées que par l'Admin.</label>
+                    </div>
+
+                    </div><!--Fin page 1 users settings -->
+
+
+                    <div class="Container_Modify" id="Page_2_Users_Settings"><!--Début page 2 users settings -->
+
+                        <div class="container_modify_1">
+
+
+                            <div class="container_modify_2">
+
+                                <div class="container_picture">
+
+                                        <div id="profile_picture_settings"></div>
+                                        <div class="container_image">
+                                            <input type="file" class="style_input_add" id="profile_picture_users_settings" onchange="load_profile_picture(),Uploaded()">
+                                            <label id="Choose_image" class="Choose_Img">Modify</label>
+                                            <label class="Name_User" id="LB_Identifiant"></label>
+                                            <div class="container_Delete" id="delete_User" onclick="Delete_User()">
+                                                <img class="Img_Delete_User" src="../img/trash_Icon.svg"/>
+                                                <label class="LB_Delete_User">Delete</label>
+                                            </div>
+
+                                        </div>
+
+                                </div>
+                            </div>
+
+                            <div class="container_info_user">
+
+                                <div class="container_info_LB_TB">
+
+                                    <div class="container_LB">
+                                        <label class="LB_User_settings">Nom</label>
+                                    </div>
+                                    <input type="text" class="TB_User_settings" id="TB_Nom" onkeyup="Create_identifiant()" onkeypress="return blockSpecialChar(event)">
+                                </div>
+
+                                <div class="container_info_LB_TB">
+
+                                    <div class="container_LB">
+                                        <label class="LB_User_settings">Prénom</label>
+                                    </div>
+                                    <input type="text" class="TB_User_settings" id="TB_Prenom" onkeyup="Create_identifiant()" onkeypress="return blockSpecialChar(event)">
+                                </div>
+
+                                <div class="container_info_LB_TB">
+
+                                    <div class="container_LB">
+                                        <label class="LB_User_settings">Autorisation</label>
+                                    </div>
+
+                                    <select class="CB_User_settings" id="CB_Auth">
+                                        <option value="none" class="Choice">choose one of them</option>
+                                        <option value="Admin" class="Choice">Admin</option>
+                                        <option value="User" class="Choice">User</option>
+                                    </select>
+
+                                </div>
+
+                                <div class="container_info_LB_TB">
+
+                                    <div class="container_LB">
+                                        <label class="LB_User_settings">Password</label>
+                                    </div>
+
+                                    <div class="password_container">
+                                        <input type="password" class="TB_Password" id="TB_Password">
+                                        <button class="password_BTN" id="BTN_Password" onclick="hide_show_password()"></button>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="container_save_cancel">
+
+                            <button class="BTN_Save" id="Save_BTN" onclick="Update_Users()">Save</button>
+                            <label class="LB_Cancel" onclick="Go_back_Users()">Cancel</label>
+
+
+                        </div>
+
+                    </div><!--Fin page 2 users settings -->
+
+                </div><!--Fin Carte User Settings -->
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container_Cards"> <!-- Container contenant les 4 cartes -->
+
+            <div class="Card" onclick="Choose_Card(this.id)" id="card_1">
+                <label class="Card_Title">Sound Level</label>
+                <div class="Cards_style" id="IMG_sound_level">
+                    <img src="../img/Sound_Level_Icon.svg" class="IMG_choose" id="IMG_SND" />
+                </div>
+            </div>
+
+            <div class="Card" onclick="Choose_Card(this.id)" id="card_2">
+                <label class="Card_Title">Sound Settings</label>
+                <div class="center_card">
+                    <div class="Cards_style" id="IMG_sound_settings">
+                        <img src="../img/Sound_Settings_Icon.svg" class="IMG_choose" id="IMG_SND_SET" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="Card_bottom" id="card_3" onclick="Choose_Card(this.id)">
+                <label class="Card_Title">Graph</label>
+                <div class="Cards_style" id="IMG_graph">
+                    <img src="../img/Graph_Icon.svg" class="IMG_choose" id="IMG_GRAPH_"/>
+                </div>
+            </div>
+
+            <div class="Card_bottom" onclick="Choose_Card(this.id)" id="card_4">
+                <label class="Card_Title">Users Settings</label>
+                <div class="Cards_style" id="IMG_User_Settings">
+                    <img src="../img/Users_Settings_Icon.svg" class="IMG_choose" id="IMG_USER_SET" />
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="container_footer">
+
+        <div class="container_footer_">
+            <label class="LB_copyright">EKA © 2022. Tous droits réservés.</label>
+        </div>
+        <div class="container_footer_"></div>
+        <div class="container_footer_">
+            <label class="version">V1.2</label>
+        </div>
+    </div>
+
+</div>
+</div>
+
+    <div id="DL_APK" class="Container_APK">
+
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+        <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_87j5x5ty.json"  background="transparent"  speed="1"  style="width: 100px; height: 100px; margin-bottom: 5%" autoplay></lottie-player>
+
+        <label class="LB_APK_Warning">L'appareil que vous utilisez n'a pas le bon format d'affichage</label>
+        <label class="LB_APK_Warning">Veuillez téléchargez l'application pour y accéder</label>
+        <img src="../img/APK_apercu.svg" class="IMG_APK">
+        <a href="http://valentinluginbuhl.fr/sns/SNS.apk" class="Download_APK">SNS.apk</a>
+
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="text/javascript" src="../codebehind/Request.js"></script>
+<script type="text/javascript" src="../codebehind/main.js"></script>
+<script type="text/javascript" src="../codebehind/Measure_Live.js"></script>
+<script type="text/javascript" src="../codebehind/Settings.js"></script>
+<script type="text/javascript" src="../codebehind/Common_function.js"></script>
+<script type="text/javascript" src="../codebehind/variable.js"></script>
+<script type="text/javascript" src="../codebehind/slider.js"></script>
+</html>
